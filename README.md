@@ -4,7 +4,7 @@
 
 This is a super-easy to use Logstash docker image that includes everything you need to collect, parse, store logs, search logs, visualise logs and extract different sort of information from logs.
 
-This all-in-one logstash stack includes:
+This all-in-one logstash stack image includes:
 
 * JDK 8
 * Logstash 1.4.2
@@ -67,7 +67,7 @@ To customise logstash configuration, simply map (override) **logstash.conf** fil
 docker run -d \
    --name logstash \
    -p 5601:5601 \
-   -v path-to-your-logstash-conf:/opt/logstash/conf/logstash.conf
+   -v path-to-your-logstash-conf:/opt/logstash/conf/logstash.conf \
    beh01der/logstash-es-kibana
 ```
 
@@ -77,8 +77,8 @@ For debugging you can run this image in interactive mode
 docker run -i -t \
    --name logstash \
    -p 5601:5601 \
-   -v path-to-your-logstash-conf:/opt/logstash/conf/logstash.conf
-   beh01der/logstash-es-kibana
+   -v path-to-your-logstash-conf:/opt/logstash/conf/logstash.conf \
+   beh01der/logstash-es-kibana \
    /bin/bash
 
 then inside the container run:
